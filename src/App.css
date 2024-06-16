@@ -1,38 +1,517 @@
-.App {
+@import url('./colors.css');
+
+body {
+  font-family: 'Gill Sans', sans-serif; /* Example font family */
+}
+
+
+.light-mode-background {
+  background-color: white; 
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden; 
+}
+
+.dark-mode-background {
+  background-color: black; 
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden; 
+  width: 120%;
+}
+/* //////////////////////////////////////// NAVBAR ///////////////////////////////////////////////// */
+
+
+.navbar{
+  padding: 20px 0;
+  margin-bottom: 30px;
+} 
+
+.navbar__title{
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5em;
+  text-shadow: 5px 5px 10px lightseagreen;
+
+  
+}
+
+
+/* //////////////////////////////////////// SEARCH ///////////////////////////////////////////////// */
+
+
+
+.search{
+  padding: 10px;
+  border-color: 1px solid black;
+  width: 100%;
+  height: 60px;
+  /* min-height: 60px; */
+  margin-bottom: 30px;
+  display: flex;
+
+}
+
+.search__wrapper{
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+}
+
+.search__input{
+  outline: none;
+  padding: 10px 10px 10px 40px;
+  width: 99%;
+  height: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid gray;
+  color: lightseagreen;
+  border-radius: 15px;
+}
+
+.search__input:focus{
+  border: 1px solid black;
+}
+
+.search__input::placeholder{
+  color: lightseagreen;
+  font-weight: 700;
+}
+
+.search__icon{
+  position: absolute;
+  left: 10px;
+  top: 25%;
+  bottom: 25%;
+  height: 50%;
+}
+
+.search__button{
+  display: block;
+  width: 7%;
+  height: 100%;
+  background-color: black;
+  border: 1px solid transparent;
+  font-weight: 700;
+  color: white;
+  border-radius: 15px;
+}
+
+.search__button:hover{
+  cursor: pointer;
+}
+
+
+
+/* //////////////////////////////////////// GRID ///////////////////////////////////////////////// */
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid__button {
+  background-color: lightseagreen;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+}
+
+.grid__wrapper-button {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.grid__button:hover{
+  cursor: pointer;
+}
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 50px;
+}
+
+
+
+/* //////////////////////////////////////// CARDZZZ ///////////////////////////////////////////////// */
+
+
+
+.card {
+  display: flex;
+  flex-direction: column; /* Ensure cards stack properly */
+  align-items: center; /* Center items inside cards */
+  position: relative;
+  padding: 20px; /* Adjust padding inside each card */
+  border-radius: 15px;
+  border: none;
+}
+
+.card-light {
+  background-color: var(--bg-poke-color-light);
+}
+
+.card-dark {
+  background-color: transparent;
+  border: 5px solid var(--bg-poke-color-dark);
+}
+
+
+
+
+.card:hover{
+  cursor: pointer;
+}
+
+
+.card__title {
+  position: relative;
+}
+
+
+
+
+.card__title-text{
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+
+
+.card__badge-Icon{
+  display: inline-block;
+  margin-right: 10px;
+  width: 20%;
+  height: 100%;
+}
+
+.card__badge-text{
+  display: inline-block;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.card__details {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.card__number {
+  position: absolute;
+  left: 7%;
+  top: 10px;
+  background-color: rgba(158, 158, 158, 0.26); /* Use rgba for transparency */
+  border-radius: 15px;
+  padding: 0 6px;
+}
+
+.card__number-text {
+  color: #ffffff; /* Adjust text color as needed */
+  font-weight: bold;
+}
+
+
+
+/* //////////////////////////////////////// FLIP CARDZZZ ///////////////////////////////////////////////// */
+
+
+.flip__card {
+  perspective: 1000px; 
+}
+
+.card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d; /* Maintain 3D positioning of child elements */
+}
+
+.flip__card:hover .card__inner {
+  transform: rotateY(180deg); 
+}
+
+
+.card__front {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  z-index: 2; 
+}
+
+.card__back {
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  z-index: 1; 
+}
+
+.type__container {
+  width: 200px;
+}
+
+.link {
+  text-decoration: none;
+}
+/*/////////////////////////////////////// GLOWING TEXT //////////////////////////////////////////////*/
+
+.glow {
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  text-shadow: whitesmoke 1px 0 10px;
+}
+
+
+/* //////////////////////////////////////// FOOTER ///////////////////////////////////////////////// */
+
+
+.footer{
+  margin-top: auto;
+  background-color: var(--bg-dark-color);
+  color: lightseagreen;
+  padding: 12px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+@media only screen and (max-width: 1030px){
+  .grid__pokemon {
+    grid-template-columns: repeat(3, 1fr); /* Adjust columns for medium screens */
+  }
+  .card__image{
+    width: 40%;
+    height: 100%;
+  }
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 760px){
+  .grid__pokemon {
+    grid-template-columns: repeat(2, 1fr); /* Adjust columns for small screens */
+  }
+
+  .card__image{
+    width: 40%;
+  }
+
+
+  .search__wrapper{
+    width: 80%;
+  }
+
+  .search__button{
+    width: 20%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 550px){
+  .grid__pokemon {
+    grid-template-columns: 1fr; /* Single column for very small screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .card__image{
+    width: 40%;
+    height: 100%;
+  }
+
+
+  .search__wrapper{
+    width: 80%;
+  }
+
+  .search__button{
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 430px){
+  .card {
+    width: 100%; /* Ensure cards take full width on smallest screens */
+  }
+
+  .grid__pokemon{
+    grid-template-columns: 1fr;
+  }
+
+  .card__image{
+    width: 40%;
+    height: 100%;
+  }
+
+
+  .search__wrapper{
+    width: 80%;
+  }
+
+  .search__button{
+    width: 20%;
+  }
+
+  .container{
+    padding: 0;
+
+  }
+}
+
+
+
+
+
+/* ////////////////////////////// DARK MODE TOGGLE ////////////////////////////////////////////// */
+
+
+.toggle {
+  height: 45px;
+  width: 90px;
+  border-radius: 40px;
+  margin: auto;
+  background-image: linear-gradient(#00A3FF, skyblue);
+  position: relative;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.toggle.night {
+  background-image: linear-gradient(rgb(18, 18, 98), rebeccapurple);
+}
+
+.notch {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: yellow;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  box-shadow: 0 0 3px yellow;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+
+
+.notch > .crater {
+  background: burlywood;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4) inset;
+}
+.night .crater {
+  opacity: 0.4;
+}
+
+.crater:first-child {
+  left: 1px;
+  top: 7px;
+  height: 7.5px;
+  width: 20px;
+  transform: rotate(-45deg);
+}
+
+
+.crater:last-child {
+  right: 4px;
+  top: 7px;
+  height: 7.5px;
+  width: 12.5px;
+  transform: rotate(45deg);
+}
+
+.night > .notch {
+  background: whitesmoke;
+  box-shadow: 0 0 3px whitesmoke;
+  transform: translateX(45px) rotate(-360deg); /* Move and rotate the notch for night mode */
+
+}
+
+.shape {
+  position: absolute;
+  background: whitesmoke;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.shape.sm {
+  height: 7px;
+  width: 25px;
+  top: 18px;
+  left: 55px;
+}
+
+.shape.md {
+  height: 7px;
+  width: 35px;
+  top: 8px;
+  left: 20px;
+  z-index: 2;
+}
+
+.shape.lg {
+  height: 7.5px;
+  width: 50px;
+  bottom: 7px;
+  left: 20px;
+}
+
+.night .shape {
+  background: lightgray;
+  box-shadow: 0 0 6px 1.5px violet;
+}
+
+.night .shape.sm {
+  height: 3.75px;
+  width: 3.75px;
+  transform: translate(-20px, 3px);
+}
+
+.night .shape.sm:first-of-type {
+  transform: translate(-40px, -2px);
+}
+
+.night .shape.md {
+  height: 7.5px;
+  width: 7.5px;
+  transform: translate(10px, 0px);
+}
+
+.night .shape.lg {
+  height: 11.25px;
+  width: 11.25px;
+  transform: translate(0px, 0px);
+} 
+
+
+.notch-rolling {
+  animation: rollNotch 0.3s ease forwards; /* Define the rolling animation */
+}
+
+@keyframes rollNotch {
+  0% {
+      transform: translateX(0) rotate(0); /* Start position and rotation */
+  }
+  100% {
+      transform: translateX(45px) rotate(-360deg); /* End position and rotation */
   }
 }
